@@ -25,3 +25,15 @@ function example2(arr) {
 }
 
 //Ans: O(N^2)
+
+//Example 3
+function primeNumber(n) {
+  for (let x = 2; x * x <= n; x++) {
+    if (n % x == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+//Ans: O(SQRT(N))
