@@ -59,3 +59,22 @@ function fib(n) {
   return fib(n - 1) + fib(n - 2);
 }
 //Ans: O(2^N)
+
+//Example 6
+//Fib memoization
+function fibMemo(n) {
+  let memo = new Array(n).fill(0);
+  for (let i = 0; i < n; i++) {
+    console.log(`${i} -> ${fib(n, memo)}`);
+  }
+
+  function fib(n, memo) {
+    if (n <= 0) return 0;
+    else if (n == 1) return 1;
+    else if (memo[n] > 0) return memo[n];
+    memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+    return memo[n];
+  }
+}
+
+//Ans: O(N)
