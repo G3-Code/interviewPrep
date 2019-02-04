@@ -13,4 +13,11 @@ let HashTable = function() {
   this.print = function() {
     console.log(storage);
   };
+
+  this.add = function(key, value) {
+    let index = hash(key, storageLimit);
+    if (storage[index] === undefined) {
+      storage[index] = [key, value];
+    }
+  };
 };
