@@ -18,6 +18,17 @@ let HashTable = function() {
     let index = hash(key, storageLimit);
     if (storage[index] === undefined) {
       storage[index] = [key, value];
+    } else {
+      let inserted = false;
+      for (let i = 0; i < storage[index].length; i++) {
+        if (storage[index][i][0] == key) {
+          storage[index][i][1] = value;
+          inserted = true;
+        }
+      }
+      if (!inserted) {
+        storage[index].push([key, value]);
+      }
     }
   };
 };
