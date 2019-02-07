@@ -36,6 +36,12 @@ let HashTable = function() {
     let index = hash(key, storageLimit);
     if (storage[index].length === 1 && storage[index][0][0] === key) {
       delete storage[index];
+    } else {
+      for (var i = 0; i < storage[index].length; i++) {
+        if (storage[index][i][0] === key) {
+          delete storage[index][i];
+        }
+      }
     }
   };
 };
