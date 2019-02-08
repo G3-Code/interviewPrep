@@ -8,7 +8,7 @@ var hash = function(key, max) {
 };
 let HashTable = function() {
   let storage = [];
-  let storageLimit = 4;
+  let storageLimit = 10;
 
   this.print = function() {
     console.log(storage);
@@ -44,4 +44,24 @@ let HashTable = function() {
       }
     }
   };
+
+  this.lookup = function(key) {
+    let index = hash(key, storageLimit);
+    if (storage[index] === undefined) {
+      return undefined;
+    } else {
+      for (let i = 0; i < storage[index].length; i++) {
+        if (storage[index][i][0] === key) {
+          return storage[index][i][1];
+        }
+      }
+    }
+  };
 };
+
+let ht = new HashTable();
+ht.add("a", "person");
+ht.add("b", "dog");
+ht.add("c", "dino");
+ht.add("d", "Penguin");
+ht.print();
