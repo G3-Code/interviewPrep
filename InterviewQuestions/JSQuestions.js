@@ -26,4 +26,20 @@ function strRev(val) {
   );
 }
 
-console.log(strRev("malayalam"));
+// console.log(strRev("malayalam"));
+
+function sum(x) {
+  console.log(arguments.length);
+  return function(y) {
+    console.log("for y" + arguments.length);
+    return x + y;
+  };
+}
+
+// console.log(sum(1, 2, 3, 4)(2));
+
+var d = {};
+["zebra", "horses"].forEach(function(k) {
+  d[k] = undefined;
+});
+console.log(d);
