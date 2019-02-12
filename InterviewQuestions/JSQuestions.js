@@ -42,4 +42,11 @@ var d = {};
 ["zebra", "horses"].forEach(function(k) {
   d[k] = undefined;
 });
-console.log(d);
+// console.log(d);
+
+console.log(1 + "2" + "2");
+console.log(1 + +"2" + "2");
+console.log(1 + -"1" + "2");
+console.log(+"1" + "1" + "2");
+console.log("A" - "B" + "2");
+console.log("A" - "B" + 2);
