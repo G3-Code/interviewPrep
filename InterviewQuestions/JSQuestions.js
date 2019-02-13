@@ -44,9 +44,30 @@ var d = {};
 });
 // console.log(d);
 
-console.log(1 + "2" + "2");
-console.log(1 + +"2" + "2");
-console.log(1 + -"1" + "2");
-console.log(+"1" + "1" + "2");
-console.log("A" - "B" + "2");
-console.log("A" - "B" + 2);
+// console.log(1 + "2" + "2");
+// console.log(1 + +"2" + "2");
+// console.log(1 + -"1" + "2");
+// console.log(+"1" + "1" + "2");
+// console.log("A" - "B" + "2");
+// console.log("A" - "B" + 2);
+
+function operation(x, y) {
+  let count = 0;
+  function adding() {
+    count = x + y;
+  }
+  adding();
+  console.log(count);
+}
+
+// operation(1, 2);
+
+function mul(z) {
+  return function(y) {
+    return function(x) {
+      return x * y * z;
+    };
+  };
+}
+
+console.log(mul(4)(3)(4));
